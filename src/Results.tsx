@@ -17,7 +17,7 @@ enum Event {
 
 interface Result {
   patientId: string; // the client specific identifier
-  scannedAt: string; // the time at which the sample was digitally scanned
+  scannedAt: Date; // the time at which the sample was digitally scanned
   score: number; // the score of the sample
   event: Event; // the event that the sample was taken at
   sampleQuality: Quality; // the quality of the sample
@@ -28,42 +28,50 @@ interface Result {
 const data: Result[] = [
   {
     patientId: "87gd2",
-    scannedAt: "2021-08-03T12:00:00Z",
-    score: 0.8,
+    scannedAt: new Date("2021-08-03T12:00:00Z"),
+    score: 0.81,
     event: Event.FollowUp,
     sampleQuality: Quality.Low,
     dateOfBirth: "1990-01-01",
   },
   {
     patientId: "87gd2",
-    scannedAt: "2021-08-01T12:00:00Z",
-    score: 0.9,
+    scannedAt: new Date("2021-08-01T12:00:00Z"),
+    score: 0.92,
     event: Event.Baseline,
     sampleQuality: Quality.High,
     dateOfBirth: "1990-01-01",
   },
   {
     patientId: "87gd2",
-    scannedAt: "2021-08-08T12:00:00Z",
-    score: 0.4,
+    scannedAt: new Date("2021-08-08T12:00:00Z"),
+    score: 0.43,
     event: Event.Conclusion,
     sampleQuality: Quality.Low,
     dateOfBirth: "1990-01-01",
   },
   {
     patientId: "js27h",
-    scannedAt: "2021-08-02T12:00:00Z",
-    score: 0.7,
+    scannedAt: new Date("2021-08-02T12:00:00Z"),
+    score: 0.74,
     event: Event.Baseline,
     sampleQuality: Quality.Medium,
     dateOfBirth: "1993-02-12",
   },
   {
     patientId: "9782e",
-    scannedAt: "2021-08-03T12:00:00Z",
-    score: 0.2,
-    event: Event.Conclusion,
+    scannedAt: new Date("2021-08-03T12:00:00Z"),
+    score: 0.25,
+    event: Event.Baseline,
     sampleQuality: Quality.Medium,
+    dateOfBirth: "1981-04-12",
+  },
+  {
+    patientId: "9782e",
+    scannedAt: new Date("2021-08-21T12:00:00Z"),
+    score: 0.21,
+    event: Event.FollowUp,
+    sampleQuality: Quality.High,
     dateOfBirth: "1981-04-12",
   },
 ];
@@ -75,7 +83,7 @@ export default function Results() {
         return (
           <>
             <p>PatientID: {item.patientId}</p>
-            <p>Scanned At: {item.scannedAt}</p>
+            <p>Scanned At: {item.scannedAt.valueOf()}</p>
             <p>Score: {item.score}</p>
             <p>Event: {item.event}</p>
             <p>Sample Quality: {item.sampleQuality}</p>
