@@ -24,7 +24,7 @@ How you approach is up to you, we use [shadcn](https://ui.shadcn.com/) and refer
 
 ## Codebase
 
-The repo contains a lot of the boilerplate used for a React Typescript project, we expect for this task you'll only need to edit `src/Results.tsx` and `src/Results.css`. You're welcome to add files. You're welcome to use any libraries you like, however, you do not need to be considerate of the scaling this project up.
+The repo contains a lot of the boilerplate used for a React Typescript project, we expect for this task you'll only need to edit `src/Results.tsx` and `src/Results.css`. You're welcome to add files. You're welcome to use any libraries you like, however, you do not need to be considerate of scaling this project up.
 
 Tests for this project are not a requirement, but if you feel like it, go ahead.
 
